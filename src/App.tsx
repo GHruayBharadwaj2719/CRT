@@ -864,7 +864,12 @@ const LearningPlatform = () => {
             </div>
           </div>
         </header>
+       
+        <div style={{textAlign: 'center', color: '#aaa', marginTop: '2rem', fontSize: '14px'}}>
+                This Website is created by G Hruday Bharadwaj
+        </div>  
 
+        
         {/* Navigation Tabs */}
         <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
           {[
