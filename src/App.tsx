@@ -35,6 +35,12 @@ const LearningPlatform = () => {
   const CODECHEF_PRACTICE_URL = 'https://www.codechef.com/practice';
   const CODECHEF_BEGINNER_URL = 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=200&end_rating=1000&topic=&tags=&group=&language=All';
 
+  // YouTube DSA Resources (General/Advanced)
+  const DSA_GENERAL_NOTES = [
+    { name: 'YouTube: Abdul Bari - DSA Concepts', url: 'https://www.youtube.com/watch?v=Nqrq0yB96gY' },
+    { name: 'YouTube: freeCodeCamp - DSA Full Course', url: 'https://www.youtube.com/watch?v=4_HOnhB64Dg' },
+  ];
+
 
   const courses = {
     coding: [
@@ -89,11 +95,11 @@ const LearningPlatform = () => {
           ],
           javascript: [
             { name: 'W3Schools - JS Operators', url: 'https://www.w3schools.com/js/js_operators.asp' },
-            { name: 'GeeksforGeeks - JS Operators', url: 'https://www.geeksforg eeks.org/javascript-operators/' }
+            { name: 'GeeksforGeeks - JS Operators', url: 'https://www.geeksforgeeks.org/javascript-operators/' }
           ],
           c: [
             { name: 'W3Schools - C Operators', url: 'https://www.w3schools.com/c/c_operators.php' },
-            { name: 'GeeksforGeeks - C Operators', url: 'https://www.geeksforg eeks.org/operators-in-c/' }
+            { name: 'GeeksforGeeks - C Operators', url: 'https://www.geeksforgeeks.org/operators-in-c/' }
           ]
         },
         problems: [
@@ -293,6 +299,7 @@ const LearningPlatform = () => {
         duration: '3h', 
         topics: ['Bubble', 'Merge', 'Quick Sort'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Sorting', url: 'https://www.geeksforgeeks.org/sorting-algorithms/' },
           { name: 'W3Schools - Sorting', url: 'https://www.w3schools.com/dsa/dsa_algo_sorting.php' }
         ],
@@ -306,6 +313,7 @@ const LearningPlatform = () => {
         duration: '2.5h', 
         topics: ['Binary Search', 'Variants'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Binary Search', url: 'https://www.geeksforgeeks.org/binary-search/' },
           { name: 'W3Schools - Binary Search', url: 'https://www.w3schools.com/dsa/dsa_algo_binarysearch.php' }
         ],
@@ -319,6 +327,7 @@ const LearningPlatform = () => {
         duration: '3h', 
         topics: ['Singly', 'Doubly', 'Operations'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Linked List', url: 'https://www.geeksforgeeks.org/data-structures/linked-list/' },
           { name: 'W3Schools - Linked Lists', url: 'https://www.w3schools.com/dsa/dsa_data_linkedlists.php' }
         ],
@@ -332,6 +341,7 @@ const LearningPlatform = () => {
         duration: '2.5h', 
         topics: ['Stack Ops', 'Implementation'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Stack', url: 'https://www.geeksforgeeks.org/stack-data-structure/' },
           { name: 'W3Schools - Stacks', url: 'https://www.w3schools.com/dsa/dsa_data_stacks.php' }
         ],
@@ -345,6 +355,7 @@ const LearningPlatform = () => {
         duration: '2.5h', 
         topics: ['Queue Ops', 'Priority Queue'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Queue', url: 'https://www.geeksforgeeks.org/queue-data-structure/' },
           { name: 'W3Schools - Queues', url: 'https://www.w3schools.com/dsa/dsa_data_queues.php' }
         ],
@@ -358,6 +369,7 @@ const LearningPlatform = () => {
         duration: '2.5h', 
         topics: ['Hash Tables', 'Hash Map'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Hashing', url: 'https://www.geeksforgeeks.org/hashing-data-structure/' },
           { name: 'W3Schools - Hash Tables', url: 'https://www.w3schools.com/dsa/dsa_data_hashtables.php' }
         ],
@@ -371,6 +383,7 @@ const LearningPlatform = () => {
         duration: '3h', 
         topics: ['Base Case', 'Backtracking'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Recursion', url: 'https://www.geeksforgeeks.org/recursion/' },
           { name: 'W3Schools - Recursion', url: 'https://www.w3schools.com/dsa/dsa_algo_recursion.php' }
         ],
@@ -384,6 +397,7 @@ const LearningPlatform = () => {
         duration: '3h', 
         topics: ['Binary Tree', 'BST', 'Traversal'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Trees', url: 'https://www.geeksforgeeks.org/binary-tree-data-structure/' },
           { name: 'W3Schools - Trees', url: 'https://www.w3schools.com/dsa/dsa_data_trees.php' }
         ],
@@ -397,6 +411,7 @@ const LearningPlatform = () => {
         duration: '3h', 
         topics: ['BFS', 'DFS', 'Representation'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Graphs', url: 'https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/' },
           { name: 'W3Schools - Graphs', url: 'https://www.w3schools.com/dsa/dsa_data_graphs.php' }
         ],
@@ -410,6 +425,7 @@ const LearningPlatform = () => {
         duration: '3h', 
         topics: ['Memoization', 'Tabulation'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - DP', url: 'https://www.geeksforgeeks.org/dynamic-programming/' },
           { name: 'W3Schools - DP', url: 'https://www.w3schools.com/dsa/dsa_algo_dp.php' }
         ],
@@ -423,6 +439,7 @@ const LearningPlatform = () => {
         duration: '2.5h', 
         topics: ['Greedy Approach', 'Knapsack'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Greedy', url: 'https://www.geeksforgeeks.org/greedy-algorithms/' }
         ],
         problems: [
@@ -435,6 +452,7 @@ const LearningPlatform = () => {
         duration: '3h', 
         topics: ['N-Queens', 'Sudoku'], 
         notes: [
+          ...DSA_GENERAL_NOTES,
           { name: 'GeeksforGeeks - Backtracking', url: 'https://www.geeksforgeeks.org/backtracking-algorithms/' }
         ],
         problems: [
@@ -462,6 +480,8 @@ const LearningPlatform = () => {
         duration: '2h', 
         topics: ['Basics', 'Applications'], 
         notes: [
+          { name: 'YouTube: Percentage Shortcuts & Tricks', url: 'https://www.youtube.com/watch?v=RWdNhJWwzSs' },
+          { name: 'YouTube: Percentage Basics for CAT/MBA', url: 'https://www.youtube.com/watch?v=fkSGkfnX-Ig' },
           { name: 'Khan Academy - Percentages', url: 'https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages' }
         ],
         problems: [
@@ -513,6 +533,8 @@ const LearningPlatform = () => {
         duration: '2.5h', 
         topics: ['Work Rate', 'Combined'], 
         notes: [
+          { name: 'YouTube: Time and Work Shortcuts & Tricks', url: 'https://www.youtube.com/watch?v=otqop6D1srA' },
+          { name: 'YouTube: Time and Work Problems Tutorial', url: 'https://www.youtube.com/watch?v=Negzvy5Bsuc' },
           { name: 'GeeksforGeeks - Time Work', url: 'https://www.geeksforgeeks.org/time-and-work/' }
         ],
         problems: [
@@ -526,6 +548,8 @@ const LearningPlatform = () => {
         duration: '2.5h', 
         topics: ['Speed', 'Distance'], 
         notes: [
+          { name: 'YouTube: Speed, Distance & Time Shortcuts', url: 'https://www.youtube.com/watch?v=jzNxXm5twx4' },
+          { name: 'YouTube: TSD Introduction (FeelFreeToLearn)', url: 'https://www.youtube.com/watch?v=ufbDCFUn6PY' },
           { name: 'GeeksforGeeks - Speed Distance', url: 'https://www.geeksforgeeks.org/time-speed-distance/' }
         ],
         problems: [
@@ -539,6 +563,7 @@ const LearningPlatform = () => {
         duration: '1.5h', 
         topics: ['Mean', 'Weighted Avg'], 
         notes: [
+          { name: 'YouTube: Averages (Apti Academy Playlist)', url: 'https://youtube.com/playlist?list=PL44d320jA23467c61ac04b5003f9012a6' }, // Placeholder for a generic Quants basics playlist from search
           { name: 'GeeksforGeeks - Average', url: 'https://www.geeksforgeeks.org/average/' }
         ],
         problems: [
@@ -554,6 +579,8 @@ const LearningPlatform = () => {
         duration: '2h', 
         topics: ['Patterns', 'Sequences'], 
         notes: [
+          { name: 'YouTube: Number Series Reasoning Tricks', url: 'https://www.youtube.com/watch?v=ajrOM1ggCoQ' },
+          { name: 'YouTube: Number Series Completion', url: 'https://www.youtube.com/watch?v=xytSn9Em1wg' },
           { name: 'GeeksforGeeks - Number Series', url: 'https://www.geeksforgeeks.org/number-series/' }
         ],
         problems: [
@@ -580,6 +607,8 @@ const LearningPlatform = () => {
         duration: '2h', 
         topics: ['Number', 'Letter'], 
         notes: [
+          { name: 'YouTube: Number Analogy Tricks', url: 'https://www.youtube.com/watch?v=XKmtLZ6B8J8' },
+          { name: 'YouTube: Logical Reasoning Basics | Analogies', url: 'https://www.youtube.com/watch?v=zdWhHHxhGoE' },
           { name: 'GeeksforGeeks - Analogies', url: 'https://www.geeksforgeeks.org/analogies/' }
         ],
         problems: [
@@ -618,6 +647,8 @@ const LearningPlatform = () => {
         duration: '2h', 
         topics: ['Family Tree', 'Relations'], 
         notes: [
+          { name: 'YouTube: Blood Relation Tricks & Concepts', url: 'https://www.youtube.com/watch?v=E7DFrd1IsYQ' },
+          { name: 'YouTube: Blood Relations Basic Concepts', url: 'https://www.youtube.com/watch?v=Y8AsqpLKdJE' },
           { name: 'GeeksforGeeks - Blood Relations', url: 'https://www.geeksforgeeks.org/blood-relations/' }
         ],
         problems: [
@@ -644,6 +675,8 @@ const LearningPlatform = () => {
         duration: '2h', 
         topics: ['Logic', 'Problem Solving'], 
         notes: [
+          { name: 'YouTube: 5 Reasoning Questions | Puzzles', url: 'https://www.youtube.com/watch?v=_G_ZqrZYhV4' },
+          { name: 'YouTube: Logical Reasoning Questions', url: 'https://www.youtube.com/watch?v=o_IjIrCI_bc' },
           { name: 'GeeksforGeeks - Puzzles', url: 'https://www.geeksforgeeks.org/puzzles/' }
         ],
         problems: [
@@ -659,6 +692,7 @@ const LearningPlatform = () => {
         duration: '2h', 
         topics: ['Tenses', 'Parts of Speech'], 
         notes: [
+          { name: 'YouTube: Top 100 Grammar Rules (Marathon)', url: 'https://www.youtube.com/watch?v=CS_9s9jKSpo' },
           { name: 'Grammarly - Grammar', url: 'https://www.grammarly.com/blog/category/handbook/' },
           { name: 'GeeksforGeeks - Grammar', url: 'https://www.geeksforgeeks.org/english-grammar/' }
         ],
@@ -710,6 +744,8 @@ const LearningPlatform = () => {
         duration: '2h', 
         topics: ['Grammar Errors'], 
         notes: [
+          { name: 'YouTube: 15 Rules for Spotting Errors', url: 'https://www.youtube.com/watch?v=0jADVtv42XE' },
+          { name: 'YouTube: Spotting Errors - Verbal Ability', url: 'https://www.youtube.com/watch?v=KN3MR4N0Gag' },
           { name: 'GeeksforGeeks - Error Detection', url: 'https://www.geeksforgeeks.org/error-detection/' }
         ],
         problems: [
@@ -849,7 +885,6 @@ const LearningPlatform = () => {
               <div className="flex items-center gap-2 justify-end mb-1">
                 <Calendar className="w-5 h-5 text-cyan-400" />
                 <span className="text-sm text-slate-400">Target: 2025</span>
-                
               </div>
               <div className="text-xl font-bold text-cyan-400">Build Strong Foundation</div>
             </div>
@@ -1134,7 +1169,7 @@ const LearningPlatform = () => {
                         <div className="mt-3 p-2 bg-orange-500/10 rounded-lg">
                           <p className="text-xs text-orange-200">💡 <strong>Tip:</strong> Start with easier problems and gradually increase difficulty!</p>
                         </div>
-                      </div>
+                    </div>
                     )}
                   </div>
                 );
@@ -1287,6 +1322,9 @@ const LearningPlatform = () => {
                     rows={3}
                   />
                 </div>
+<div style={{textAlign: 'center', color: '#aaa', marginTop: '2rem', fontSize: '14px'}}>
+  This Website is created by G Hruday Bharadwaj
+</div>
 
                 <button
                   onClick={addCustomLesson}
