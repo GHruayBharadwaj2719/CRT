@@ -300,6 +300,11 @@ const LearningPlatform = () => {
         topics: ['Bubble', 'Merge', 'Quick Sort'], 
         notes: [
           ...DSA_GENERAL_NOTES,
+           const DSA_GENERAL_NOTES = [
+    { name: 'YouTube: Abdul Bari - DSA Concepts', url: 'https://www.youtube.com/watch?v=Nqrq0yB96gY' },
+    { name: 'YouTube: freeCodeCamp - DSA Full Course', url: 'https://www.youtube.com/watch?v=4_HOnhB64Dg' },
+  ];
+
           { name: 'GeeksforGeeks - Sorting', url: 'https://www.geeksforgeeks.org/sorting-algorithms/' },
           { name: 'W3Schools - Sorting', url: 'https://www.w3schools.com/dsa/dsa_algo_sorting.php' }
         ],
