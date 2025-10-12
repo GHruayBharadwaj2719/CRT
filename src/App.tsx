@@ -1,145 +1,4 @@
-<div className="flex gap-2 mb-3">
-                      {lesson.notes && ((Array.isArray(lesson.notes) && lesson.notes.length > 0) || (typeof lesson.notes === 'object' && !Array.isArray(lesson.notes))) && (
-                        <button
-                          onClick={() => setShowNotesFor(showNotesFor === lesson.id ? null : lesson.id)}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/50 rounded-lg hover:bg-blue-500/30 transition-all text-sm font-semibold text-blue-300"
-                        >
-                          <FileText className="w-4 h-4" />
-                          {selectedCategory === 'coding' && typeof lesson.notes === 'object' && !Array.isArray(lesson.notes) ? 
-                            'Notes (5 Languages)' : 
-                            `Notes (${Array.isArray(lesson.notes) ? lesson.notes.length : 0})`
-                          },
-      // DSA Topics - Language Independent
-      { id: 'c9', title: 'Sorting Algorithms', duration: '3h', topics: ['Bubble', 'Merge', 'Quick Sort'], 
-        notes: [
-          { name: 'GeeksforGeeks - Sorting', url: 'https://www.geeksforgeeks.org/sorting-algorithms/' },
-          { name: 'W3Schools - Sorting', url: 'https://www.w3schools.com/dsa/dsa_algo_sorting.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Sorting', url: 'https://leetcode.com/tag/sorting/' },
-          { name: 'CodeChef (800-1200)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=800&end_rating=1200&topic=sorting&tags=&group=' }
-        ]
-      },
-      { id: 'c10', title: 'Binary Search', duration: '2.5h', topics: ['Binary Search', 'Variants'], 
-        notes: [
-          { name: 'GeeksforGeeks - Binary Search', url: 'https://www.geeksforgeeks.org/binary-search/' },
-          { name: 'W3Schools - Binary Search', url: 'https://www.w3schools.com/dsa/dsa_algo_binarysearch.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Binary Search', url: 'https://leetcode.com/tag/binary-search/' },
-          { name: 'CodeChef (900-1300)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=900&end_rating=1300&topic=binary-search&tags=&group=' }
-        ]
-      },
-      { id: 'c11', title: 'Linked Lists', duration: '3h', topics: ['Singly', 'Doubly', 'Operations'], 
-        notes: [
-          { name: 'GeeksforGeeks - Linked List', url: 'https://www.geeksforgeeks.org/data-structures/linked-list/' },
-          { name: 'W3Schools - Linked Lists', url: 'https://www.w3schools.com/dsa/dsa_data_linkedlists.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Linked List', url: 'https://leetcode.com/tag/linked-list/' },
-          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=linked-list&tags=&group=' }
-        ]
-      },
-      { id: 'c12', title: 'Stacks', duration: '2.5h', topics: ['Stack Ops', 'Implementation'], 
-        notes: [
-          { name: 'GeeksforGeeks - Stack', url: 'https://www.geeksforgeeks.org/stack-data-structure/' },
-          { name: 'W3Schools - Stacks', url: 'https://www.w3schools.com/dsa/dsa_data_stacks.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Stack', url: 'https://leetcode.com/tag/stack/' },
-          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=stack&tags=&group=' }
-        ]
-      },
-      { id: 'c13', title: 'Queues', duration: '2.5h', topics: ['Queue Ops', 'Priority Queue'], 
-        notes: [
-          { name: 'GeeksforGeeks - Queue', url: 'https://www.geeksforgeeks.org/queue-data-structure/' },
-          { name: 'W3Schools - Queues', url: 'https://www.w3schools.com/dsa/dsa_data_queues.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Queue', url: 'https://leetcode.com/tag/queue/' },
-          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=queue&tags=&group=' }
-        ]
-      },
-      { id: 'c14', title: 'Hashing', duration: '2.5h', topics: ['Hash Tables', 'Hash Map'], 
-        notes: [
-          { name: 'GeeksforGeeks - Hashing', url: 'https://www.geeksforgeeks.org/hashing-data-structure/' },
-          { name: 'W3Schools - Hash Tables', url: 'https://www.w3schools.com/dsa/dsa_data_hashtables.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Hash Table', url: 'https://leetcode.com/tag/hash-table/' },
-          { name: 'CodeChef (1100-1500)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1100&end_rating=1500&topic=hashing&tags=&group=' }
-        ]
-      },
-      { id: 'c15', title: 'Recursion', duration: '3h', topics: ['Base Case', 'Backtracking'], 
-        notes: [
-          { name: 'GeeksforGeeks - Recursion', url: 'https://www.geeksforgeeks.org/recursion/' },
-          { name: 'W3Schools - Recursion', url: 'https://www.w3schools.com/dsa/dsa_algo_recursion.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Recursion', url: 'https://leetcode.com/tag/recursion/' },
-          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=recursion&tags=&group=' }
-        ]
-      },
-      { id: 'c16', title: 'Trees', duration: '3h', topics: ['Binary Tree', 'BST', 'Traversal'], 
-        notes: [
-          { name: 'GeeksforGeeks - Trees', url: 'https://www.geeksforgeeks.org/binary-tree-data-structure/' },
-          { name: 'W3Schools - Trees', url: 'https://www.w3schools.com/dsa/dsa_data_trees.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Tree', url: 'https://leetcode.com/tag/tree/' },
-          { name: 'CodeChef (1200-1600)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1200&end_rating=1600&topic=trees&tags=&group=' }
-        ]
-      },
-      { id: 'c17', title: 'Graphs', duration: '3h', topics: ['BFS', 'DFS', 'Representation'], 
-        notes: [
-          { name: 'GeeksforGeeks - Graphs', url: 'https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/' },
-          { name: 'W3Schools - Graphs', url: 'https://www.w3schools.com/dsa/dsa_data_graphs.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - Graph', url: 'https://leetcode.com/tag/graph/' },
-          { name: 'CodeChef (1300-1700)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1300&end_rating=1700&topic=graphs&tags=&group=' }
-        ]
-      },
-      { id: 'c18', title: 'Dynamic Programming', duration: '3h', topics: ['Memoization', 'Tabulation'], 
-        notes: [
-          { name: 'GeeksforGeeks - DP', url: 'https://www.geeksforgeeks.org/dynamic-programming/' },
-          { name: 'W3Schools - DP', url: 'https://www.w3schools.com/dsa/dsa_algo_dp.php' }
-        ],
-        problems: [
-          { name: 'LeetCode - DP', url: 'https://leetcode.com/tag/dynamic-programming/' },
-          { name: 'CodeChef (1400-1800)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1400&end_rating=1800&topic=dynamic-programming&tags=&group=' }
-        ]
-      },
-      { id: 'c19', title: 'Greedy Algorithms', duration: '2.5h', topics: ['Greedy Approach', 'Knapsack'], 
-        notes: [
-          { name: 'GeeksforGeeks - Greedy', url: 'https://www.geeksforgeeks.org/greedy-algorithms/' }
-        ],
-        problems: [
-          { name: 'LeetCode - Greedy', url: 'https://leetcode.com/tag/greedy/' },
-          { name: 'CodeChef (1300-1700)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1300&end_rating=1700&topic=greedy&tags=&group=' }
-        ]
-      },
-      { id: 'c20', title: 'Backtracking', duration: '3h', topics: ['N-Queens', 'Sudoku'], 
-        notes: [
-          { name: 'GeeksforGeeks - Backtracking', url: 'https://www.geeksforgeeks.org/backtracking-algorithms/' }
-        ],
-        problems: [
-          { name: 'LeetCode - Backtracking', url: 'https://leetcode.com/tag/backtracking/' },
-          { name: 'CodeChef (1400-1800)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1400&end_rating=1800&topic=backtracking&tags=&group=' }
-        ]
-      }
-                        </button>
-                      )}
-                      {lesson.problems && lesson.problems.length > 0 && (
-                        <button
-                          onClick={() => setShowProblemsFor(showProblemsFor === lesson.id ? null : lesson.id)}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-lg hover:bg-green-500/30 transition-all text-sm font-semibold text-green-300"
-                        >
-                          <Code className="w-4 h-4" />
-                          Problems ({lesson.problems.length})
-                        </button>
-                      )}
-                    </div>import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { BookOpen, Code, TrendingUp, Brain, MessageSquare, CheckCircle, Award, BarChart, Calendar, Trophy, ExternalLink, Plus, Trash2, X, Target, FileText } from 'lucide-react';
 
 const LearningPlatform = () => {
@@ -175,7 +34,7 @@ const LearningPlatform = () => {
 
   const courses = {
     coding: [
-      { id: 'c1', title: 'Variables & Data Types', duration: '1.5h', topics: ['Variables', 'Integers', 'Strings'], 
+      { id: 'c1', title: 'Variables & Data Types', duration: '1.5h', topics: ['Variables', 'Integers', 'Strings'],
         notes: {
           python: [
             { name: 'W3Schools - Python Variables', url: 'https://www.w3schools.com/python/python_variables.asp' },
@@ -203,7 +62,7 @@ const LearningPlatform = () => {
           { name: 'CodeChef (200-400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=200&end_rating=400&topic=&tags=&group=' }
         ]
       },
-      { id: 'c2', title: 'Basic Operations', duration: '1h', topics: ['Arithmetic', 'Comparison', 'Logical'], 
+      { id: 'c2', title: 'Basic Operations', duration: '1h', topics: ['Arithmetic', 'Comparison', 'Logical'],
         notes: {
           python: [
             { name: 'W3Schools - Python Operators', url: 'https://www.w3schools.com/python/python_operators.asp' },
@@ -231,7 +90,7 @@ const LearningPlatform = () => {
           { name: 'CodeChef (200-500)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=200&end_rating=500&topic=&tags=&group=' }
         ]
       },
-      { id: 'c3', title: 'Control Flow', duration: '2h', topics: ['If-Else', 'Elif', 'Nested If'], 
+      { id: 'c3', title: 'Control Flow', duration: '2h', topics: ['If-Else', 'Elif', 'Nested If'],
         notes: {
           python: [
             { name: 'W3Schools - Python If Else', url: 'https://www.w3schools.com/python/python_conditions.asp' },
@@ -259,7 +118,7 @@ const LearningPlatform = () => {
           { name: 'CodeChef (200-600)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=200&end_rating=600&topic=&tags=&group=' }
         ]
       },
-      { id: 'c4', title: 'Loops', duration: '2.5h', topics: ['For Loop', 'While Loop', 'Break'], 
+      { id: 'c4', title: 'Loops', duration: '2.5h', topics: ['For Loop', 'While Loop', 'Break'],
         notes: {
           python: [
             { name: 'W3Schools - Python Loops', url: 'https://www.w3schools.com/python/python_for_loops.asp' },
@@ -287,7 +146,7 @@ const LearningPlatform = () => {
           { name: 'CodeChef (400-700)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=400&end_rating=700&topic=&tags=&group=' }
         ]
       },
-      { id: 'c5', title: 'Functions', duration: '2h', topics: ['Definition', 'Parameters', 'Return'], 
+      { id: 'c5', title: 'Functions', duration: '2h', topics: ['Definition', 'Parameters', 'Return'],
         notes: {
           python: [
             { name: 'W3Schools - Python Functions', url: 'https://www.w3schools.com/python/python_functions.asp' },
@@ -315,7 +174,7 @@ const LearningPlatform = () => {
           { name: 'CodeChef (500-800)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=500&end_rating=800&topic=&tags=&group=' }
         ]
       },
-      { id: 'c6', title: 'Arrays/Lists', duration: '2.5h', topics: ['Indexing', 'Slicing', 'Methods'], 
+      { id: 'c6', title: 'Arrays/Lists', duration: '2.5h', topics: ['Indexing', 'Slicing', 'Methods'],
         notes: {
           python: [
             { name: 'W3Schools - Python Lists', url: 'https://www.w3schools.com/python/python_lists.asp' },
@@ -343,7 +202,7 @@ const LearningPlatform = () => {
           { name: 'CodeChef (600-900)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=600&end_rating=900&topic=arrays&tags=&group=' }
         ]
       },
-      { id: 'c7', title: 'Strings', duration: '2h', topics: ['Operations', 'Methods', 'Formatting'], 
+      { id: 'c7', title: 'Strings', duration: '2h', topics: ['Operations', 'Methods', 'Formatting'],
         notes: {
           python: [
             { name: 'W3Schools - Python Strings', url: 'https://www.w3schools.com/python/python_strings.asp' },
@@ -371,7 +230,7 @@ const LearningPlatform = () => {
           { name: 'CodeChef (600-1000)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=600&end_rating=1000&topic=strings&tags=&group=' }
         ]
       },
-      { id: 'c8', title: 'Time Complexity', duration: '2h', topics: ['Big O', 'Analysis'], 
+      { id: 'c8', title: 'Time Complexity', duration: '2h', topics: ['Big O', 'Analysis'],
         notes: {
           python: [
             { name: 'GeeksforGeeks - Complexity', url: 'https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/' },
@@ -396,127 +255,127 @@ const LearningPlatform = () => {
         },
         problems: []
       },
-      { id: 'c9', title: 'Sorting Algorithms', duration: '3h', topics: ['Bubble', 'Merge', 'Quick Sort'], 
+      { id: 'c9', title: 'Sorting Algorithms', duration: '3h', topics: ['Bubble', 'Merge', 'Quick Sort'],
         notes: [
           { name: 'GeeksforGeeks - Sorting', url: 'https://www.geeksforgeeks.org/sorting-algorithms/' },
           { name: 'W3Schools - Sorting', url: 'https://www.w3schools.com/dsa/dsa_algo_sorting.php' }
         ],
         problems: [
           { name: 'LeetCode - Sorting', url: 'https://leetcode.com/tag/sorting/' },
-          { name: 'HackerRank - Sorting', url: 'https://www.hackerrank.com/domains/algorithms' }
+          { name: 'CodeChef (800-1200)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=800&end_rating=1200&topic=sorting&tags=&group=' }
         ]
       },
-      { id: 'c10', title: 'Binary Search', duration: '2.5h', topics: ['Binary Search', 'Variants'], 
+      { id: 'c10', title: 'Binary Search', duration: '2.5h', topics: ['Binary Search', 'Variants'],
         notes: [
           { name: 'GeeksforGeeks - Binary Search', url: 'https://www.geeksforgeeks.org/binary-search/' },
           { name: 'W3Schools - Binary Search', url: 'https://www.w3schools.com/dsa/dsa_algo_binarysearch.php' }
         ],
         problems: [
           { name: 'LeetCode - Binary Search', url: 'https://leetcode.com/tag/binary-search/' },
-          { name: 'CodeChef - Binary Search', url: 'https://www.codechef.com/practice' }
+          { name: 'CodeChef (900-1300)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=900&end_rating=1300&topic=binary-search&tags=&group=' }
         ]
       },
-      { id: 'c11', title: 'Linked Lists', duration: '3h', topics: ['Singly', 'Doubly', 'Operations'], 
+      { id: 'c11', title: 'Linked Lists', duration: '3h', topics: ['Singly', 'Doubly', 'Operations'],
         notes: [
           { name: 'GeeksforGeeks - Linked List', url: 'https://www.geeksforgeeks.org/data-structures/linked-list/' },
           { name: 'W3Schools - Linked Lists', url: 'https://www.w3schools.com/dsa/dsa_data_linkedlists.php' }
         ],
         problems: [
           { name: 'LeetCode - Linked List', url: 'https://leetcode.com/tag/linked-list/' },
-          { name: 'HackerRank - Linked List', url: 'https://www.hackerrank.com/domains/data-structures' }
+          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=linked-list&tags=&group=' }
         ]
       },
-      { id: 'c12', title: 'Stacks', duration: '2.5h', topics: ['Stack Ops', 'Implementation'], 
+      { id: 'c12', title: 'Stacks', duration: '2.5h', topics: ['Stack Ops', 'Implementation'],
         notes: [
           { name: 'GeeksforGeeks - Stack', url: 'https://www.geeksforgeeks.org/stack-data-structure/' },
           { name: 'W3Schools - Stacks', url: 'https://www.w3schools.com/dsa/dsa_data_stacks.php' }
         ],
         problems: [
           { name: 'LeetCode - Stack', url: 'https://leetcode.com/tag/stack/' },
-          { name: 'HackerRank - Stacks', url: 'https://www.hackerrank.com/domains/data-structures' }
+          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=stack&tags=&group=' }
         ]
       },
-      { id: 'c13', title: 'Queues', duration: '2.5h', topics: ['Queue Ops', 'Priority Queue'], 
+      { id: 'c13', title: 'Queues', duration: '2.5h', topics: ['Queue Ops', 'Priority Queue'],
         notes: [
           { name: 'GeeksforGeeks - Queue', url: 'https://www.geeksforgeeks.org/queue-data-structure/' },
           { name: 'W3Schools - Queues', url: 'https://www.w3schools.com/dsa/dsa_data_queues.php' }
         ],
         problems: [
           { name: 'LeetCode - Queue', url: 'https://leetcode.com/tag/queue/' },
-          { name: 'HackerRank - Queues', url: 'https://www.hackerrank.com/domains/data-structures' }
+          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=queue&tags=&group=' }
         ]
       },
-      { id: 'c14', title: 'Hashing', duration: '2.5h', topics: ['Hash Tables', 'Hash Map'], 
+      { id: 'c14', title: 'Hashing', duration: '2.5h', topics: ['Hash Tables', 'Hash Map'],
         notes: [
           { name: 'GeeksforGeeks - Hashing', url: 'https://www.geeksforgeeks.org/hashing-data-structure/' },
           { name: 'W3Schools - Hash Tables', url: 'https://www.w3schools.com/dsa/dsa_data_hashtables.php' }
         ],
         problems: [
           { name: 'LeetCode - Hash Table', url: 'https://leetcode.com/tag/hash-table/' },
-          { name: 'HackerRank - Hash Tables', url: 'https://www.hackerrank.com/domains/data-structures' }
+          { name: 'CodeChef (1100-1500)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1100&end_rating=1500&topic=hashing&tags=&group=' }
         ]
       },
-      { id: 'c15', title: 'Recursion', duration: '3h', topics: ['Base Case', 'Backtracking'], 
+      { id: 'c15', title: 'Recursion', duration: '3h', topics: ['Base Case', 'Backtracking'],
         notes: [
           { name: 'GeeksforGeeks - Recursion', url: 'https://www.geeksforgeeks.org/recursion/' },
           { name: 'W3Schools - Recursion', url: 'https://www.w3schools.com/dsa/dsa_algo_recursion.php' }
         ],
         problems: [
           { name: 'LeetCode - Recursion', url: 'https://leetcode.com/tag/recursion/' },
-          { name: 'HackerRank - Recursion', url: 'https://www.hackerrank.com/domains/algorithms' }
+          { name: 'CodeChef (1000-1400)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1000&end_rating=1400&topic=recursion&tags=&group=' }
         ]
       },
-      { id: 'c16', title: 'Trees', duration: '3h', topics: ['Binary Tree', 'BST', 'Traversal'], 
+      { id: 'c16', title: 'Trees', duration: '3h', topics: ['Binary Tree', 'BST', 'Traversal'],
         notes: [
           { name: 'GeeksforGeeks - Trees', url: 'https://www.geeksforgeeks.org/binary-tree-data-structure/' },
           { name: 'W3Schools - Trees', url: 'https://www.w3schools.com/dsa/dsa_data_trees.php' }
         ],
         problems: [
           { name: 'LeetCode - Tree', url: 'https://leetcode.com/tag/tree/' },
-          { name: 'HackerRank - Trees', url: 'https://www.hackerrank.com/domains/data-structures' }
+          { name: 'CodeChef (1200-1600)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1200&end_rating=1600&topic=trees&tags=&group=' }
         ]
       },
-      { id: 'c17', title: 'Graphs', duration: '3h', topics: ['BFS', 'DFS', 'Representation'], 
+      { id: 'c17', title: 'Graphs', duration: '3h', topics: ['BFS', 'DFS', 'Representation'],
         notes: [
           { name: 'GeeksforGeeks - Graphs', url: 'https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/' },
           { name: 'W3Schools - Graphs', url: 'https://www.w3schools.com/dsa/dsa_data_graphs.php' }
         ],
         problems: [
           { name: 'LeetCode - Graph', url: 'https://leetcode.com/tag/graph/' },
-          { name: 'HackerRank - Graph Theory', url: 'https://www.hackerrank.com/domains/algorithms' }
+          { name: 'CodeChef (1300-1700)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1300&end_rating=1700&topic=graphs&tags=&group=' }
         ]
       },
-      { id: 'c18', title: 'Dynamic Programming', duration: '3h', topics: ['Memoization', 'Tabulation'], 
+      { id: 'c18', title: 'Dynamic Programming', duration: '3h', topics: ['Memoization', 'Tabulation'],
         notes: [
           { name: 'GeeksforGeeks - DP', url: 'https://www.geeksforgeeks.org/dynamic-programming/' },
           { name: 'W3Schools - DP', url: 'https://www.w3schools.com/dsa/dsa_algo_dp.php' }
         ],
         problems: [
           { name: 'LeetCode - DP', url: 'https://leetcode.com/tag/dynamic-programming/' },
-          { name: 'HackerRank - DP', url: 'https://www.hackerrank.com/domains/algorithms' }
+          { name: 'CodeChef (1400-1800)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1400&end_rating=1800&topic=dynamic-programming&tags=&group=' }
         ]
       },
-      { id: 'c19', title: 'Greedy Algorithms', duration: '2.5h', topics: ['Greedy Approach', 'Knapsack'], 
+      { id: 'c19', title: 'Greedy Algorithms', duration: '2.5h', topics: ['Greedy Approach', 'Knapsack'],
         notes: [
           { name: 'GeeksforGeeks - Greedy', url: 'https://www.geeksforgeeks.org/greedy-algorithms/' }
         ],
         problems: [
           { name: 'LeetCode - Greedy', url: 'https://leetcode.com/tag/greedy/' },
-          { name: 'HackerRank - Greedy', url: 'https://www.hackerrank.com/domains/algorithms' }
+          { name: 'CodeChef (1300-1700)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1300&end_rating=1700&topic=greedy&tags=&group=' }
         ]
       },
-      { id: 'c20', title: 'Backtracking', duration: '3h', topics: ['N-Queens', 'Sudoku'], 
+      { id: 'c20', title: 'Backtracking', duration: '3h', topics: ['N-Queens', 'Sudoku'],
         notes: [
           { name: 'GeeksforGeeks - Backtracking', url: 'https://www.geeksforgeeks.org/backtracking-algorithms/' }
         ],
         problems: [
           { name: 'LeetCode - Backtracking', url: 'https://leetcode.com/tag/backtracking/' },
-          { name: 'HackerRank - Backtracking', url: 'https://www.hackerrank.com/domains/algorithms' }
+          { name: 'CodeChef (1400-1800)', url: 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=1400&end_rating=1800&topic=backtracking&tags=&group=' }
         ]
       }
     ],
     quant: [
-      { id: 'q1', title: 'Basic Arithmetic', duration: '2h', topics: ['Addition', 'Division', 'BODMAS'], 
+      { id: 'q1', title: 'Basic Arithmetic', duration: '2h', topics: ['Addition', 'Division', 'BODMAS'],
         notes: [
           { name: 'Khan Academy - Arithmetic', url: 'https://www.khanacademy.org/math/arithmetic' }
         ],
@@ -525,7 +384,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Arithmetic', url: 'https://prepinsta.com/quantitative-aptitude/arithmetic/' }
         ]
       },
-      { id: 'q2', title: 'Percentages', duration: '2h', topics: ['Basics', 'Applications'], 
+      { id: 'q2', title: 'Percentages', duration: '2h', topics: ['Basics', 'Applications'],
         notes: [
           { name: 'Khan Academy - Percentages', url: 'https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages' }
         ],
@@ -534,7 +393,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Percentage', url: 'https://prepinsta.com/quantitative-aptitude/percentage/' }
         ]
       },
-      { id: 'q3', title: 'Profit & Loss', duration: '2.5h', topics: ['CP', 'SP', 'Profit%'], 
+      { id: 'q3', title: 'Profit & Loss', duration: '2.5h', topics: ['CP', 'SP', 'Profit%'],
         notes: [
           { name: 'GeeksforGeeks - Profit Loss', url: 'https://www.geeksforgeeks.org/profit-and-loss/' }
         ],
@@ -543,7 +402,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Profit Loss', url: 'https://prepinsta.com/quantitative-aptitude/profit-and-loss/' }
         ]
       },
-      { id: 'q4', title: 'Simple Interest', duration: '1.5h', topics: ['Principal', 'Rate', 'Time'], 
+      { id: 'q4', title: 'Simple Interest', duration: '1.5h', topics: ['Principal', 'Rate', 'Time'],
         notes: [
           { name: 'GeeksforGeeks - Simple Interest', url: 'https://www.geeksforgeeks.org/simple-interest/' }
         ],
@@ -552,7 +411,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Simple Interest', url: 'https://prepinsta.com/quantitative-aptitude/simple-interest/' }
         ]
       },
-      { id: 'q5', title: 'Ratios', duration: '2h', topics: ['Ratio', 'Proportion'], 
+      { id: 'q5', title: 'Ratios', duration: '2h', topics: ['Ratio', 'Proportion'],
         notes: [
           { name: 'Khan Academy - Ratios', url: 'https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-rates-and-percentages/cc-6th-ratios-intro/v/introduction-to-ratios-new-hd-version' }
         ],
@@ -560,7 +419,7 @@ const LearningPlatform = () => {
           { name: 'IndiaBIX - Ratio', url: 'https://www.indiabix.com/aptitude/ratio-and-proportion/' }
         ]
       },
-      { id: 'q6', title: 'Time & Work', duration: '2.5h', topics: ['Work Rate', 'Combined'], 
+      { id: 'q6', title: 'Time & Work', duration: '2.5h', topics: ['Work Rate', 'Combined'],
         notes: [
           { name: 'GeeksforGeeks - Time Work', url: 'https://www.geeksforgeeks.org/time-and-work/' }
         ],
@@ -569,7 +428,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Time Work', url: 'https://prepinsta.com/quantitative-aptitude/time-and-work/' }
         ]
       },
-      { id: 'q7', title: 'Speed & Distance', duration: '2.5h', topics: ['Speed', 'Distance'], 
+      { id: 'q7', title: 'Speed & Distance', duration: '2.5h', topics: ['Speed', 'Distance'],
         notes: [
           { name: 'GeeksforGeeks - Speed Distance', url: 'https://www.geeksforgeeks.org/time-speed-distance/' }
         ],
@@ -578,7 +437,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Speed Distance', url: 'https://prepinsta.com/quantitative-aptitude/time-speed-and-distance/' }
         ]
       },
-      { id: 'q8', title: 'Averages', duration: '1.5h', topics: ['Mean', 'Weighted Avg'], 
+      { id: 'q8', title: 'Averages', duration: '1.5h', topics: ['Mean', 'Weighted Avg'],
         notes: [
           { name: 'GeeksforGeeks - Average', url: 'https://www.geeksforgeeks.org/average/' }
         ],
@@ -589,7 +448,7 @@ const LearningPlatform = () => {
       }
     ],
     reasoning: [
-      { id: 'r1', title: 'Number Series', duration: '2h', topics: ['Patterns', 'Sequences'], 
+      { id: 'r1', title: 'Number Series', duration: '2h', topics: ['Patterns', 'Sequences'],
         notes: [
           { name: 'GeeksforGeeks - Number Series', url: 'https://www.geeksforgeeks.org/number-series/' }
         ],
@@ -598,7 +457,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Series', url: 'https://prepinsta.com/logical-reasoning/series/' }
         ]
       },
-      { id: 'r2', title: 'Letter Series', duration: '1.5h', topics: ['Alphabets', 'Patterns'], 
+      { id: 'r2', title: 'Letter Series', duration: '1.5h', topics: ['Alphabets', 'Patterns'],
         notes: [
           { name: 'GeeksforGeeks - Letter Series', url: 'https://www.geeksforgeeks.org/letter-series/' }
         ],
@@ -607,7 +466,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Alphabet', url: 'https://prepinsta.com/logical-reasoning/alphabet-test/' }
         ]
       },
-      { id: 'r3', title: 'Analogies', duration: '2h', topics: ['Number', 'Letter'], 
+      { id: 'r3', title: 'Analogies', duration: '2h', topics: ['Number', 'Letter'],
         notes: [
           { name: 'GeeksforGeeks - Analogies', url: 'https://www.geeksforgeeks.org/analogies/' }
         ],
@@ -616,7 +475,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Analogy', url: 'https://prepinsta.com/logical-reasoning/analogy/' }
         ]
       },
-      { id: 'r4', title: 'Odd One Out', duration: '1.5h', topics: ['Classification'], 
+      { id: 'r4', title: 'Odd One Out', duration: '1.5h', topics: ['Classification'],
         notes: [
           { name: 'GeeksforGeeks - Classification', url: 'https://www.geeksforgeeks.org/classification/' }
         ],
@@ -624,7 +483,7 @@ const LearningPlatform = () => {
           { name: 'IndiaBIX - Odd One Out', url: 'https://www.indiabix.com/logical-reasoning/odd-man-out-and-series/' }
         ]
       },
-      { id: 'r5', title: 'Coding-Decoding', duration: '2h', topics: ['Letter Coding', 'Number'], 
+      { id: 'r5', title: 'Coding-Decoding', duration: '2h', topics: ['Letter Coding', 'Number'],
         notes: [
           { name: 'GeeksforGeeks - Coding Decoding', url: 'https://www.geeksforgeeks.org/coding-decoding/' }
         ],
@@ -633,7 +492,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Coding Decoding', url: 'https://prepinsta.com/logical-reasoning/coding-and-decoding/' }
         ]
       },
-      { id: 'r6', title: 'Blood Relations', duration: '2h', topics: ['Family Tree', 'Relations'], 
+      { id: 'r6', title: 'Blood Relations', duration: '2h', topics: ['Family Tree', 'Relations'],
         notes: [
           { name: 'GeeksforGeeks - Blood Relations', url: 'https://www.geeksforgeeks.org/blood-relations/' }
         ],
@@ -642,7 +501,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Blood Relations', url: 'https://prepinsta.com/logical-reasoning/blood-relations/' }
         ]
       },
-      { id: 'r7', title: 'Direction Sense', duration: '1.5h', topics: ['Directions', 'Distance'], 
+      { id: 'r7', title: 'Direction Sense', duration: '1.5h', topics: ['Directions', 'Distance'],
         notes: [
           { name: 'GeeksforGeeks - Direction Sense', url: 'https://www.geeksforgeeks.org/direction-sense-test/' }
         ],
@@ -651,7 +510,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Direction', url: 'https://prepinsta.com/logical-reasoning/direction-sense/' }
         ]
       },
-      { id: 'r8', title: 'Puzzles', duration: '2h', topics: ['Logic', 'Problem Solving'], 
+      { id: 'r8', title: 'Puzzles', duration: '2h', topics: ['Logic', 'Problem Solving'],
         notes: [
           { name: 'GeeksforGeeks - Puzzles', url: 'https://www.geeksforgeeks.org/puzzles/' }
         ],
@@ -662,7 +521,7 @@ const LearningPlatform = () => {
       }
     ],
     communication: [
-      { id: 'cm1', title: 'Grammar Basics', duration: '2h', topics: ['Tenses', 'Parts of Speech'], 
+      { id: 'cm1', title: 'Grammar Basics', duration: '2h', topics: ['Tenses', 'Parts of Speech'],
         notes: [
           { name: 'Grammarly - Grammar', url: 'https://www.grammarly.com/blog/category/handbook/' },
           { name: 'GeeksforGeeks - Grammar', url: 'https://www.geeksforgeeks.org/english-grammar/' }
@@ -671,7 +530,7 @@ const LearningPlatform = () => {
           { name: 'IndiaBIX - Grammar', url: 'https://www.indiabix.com/verbal-ability/spotting-errors/' }
         ]
       },
-      { id: 'cm2', title: 'Vocabulary', duration: '2h', topics: ['Synonyms', 'Antonyms'], 
+      { id: 'cm2', title: 'Vocabulary', duration: '2h', topics: ['Synonyms', 'Antonyms'],
         notes: [
           { name: 'Vocabulary.com', url: 'https://www.vocabulary.com/' }
         ],
@@ -680,7 +539,7 @@ const LearningPlatform = () => {
           { name: 'IndiaBIX - Antonyms', url: 'https://www.indiabix.com/verbal-ability/antonyms/' }
         ]
       },
-      { id: 'cm3', title: 'Sentence Formation', duration: '1.5h', topics: ['Structure', 'Order'], 
+      { id: 'cm3', title: 'Sentence Formation', duration: '1.5h', topics: ['Structure', 'Order'],
         notes: [
           { name: 'GeeksforGeeks - Sentence', url: 'https://www.geeksforgeeks.org/sentence-improvement/' }
         ],
@@ -688,7 +547,7 @@ const LearningPlatform = () => {
           { name: 'IndiaBIX - Sentence', url: 'https://www.indiabix.com/verbal-ability/sentence-improvement/' }
         ]
       },
-      { id: 'cm4', title: 'Comprehension', duration: '2.5h', topics: ['Reading', 'Understanding'], 
+      { id: 'cm4', title: 'Comprehension', duration: '2.5h', topics: ['Reading', 'Understanding'],
         notes: [
           { name: 'GeeksforGeeks - RC', url: 'https://www.geeksforgeeks.org/reading-comprehension/' }
         ],
@@ -697,7 +556,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - RC', url: 'https://prepinsta.com/verbal-ability/reading-comprehension/' }
         ]
       },
-      { id: 'cm5', title: 'Spotting Errors', duration: '2h', topics: ['Grammar Errors'], 
+      { id: 'cm5', title: 'Spotting Errors', duration: '2h', topics: ['Grammar Errors'],
         notes: [
           { name: 'GeeksforGeeks - Error Detection', url: 'https://www.geeksforgeeks.org/error-detection/' }
         ],
@@ -705,7 +564,7 @@ const LearningPlatform = () => {
           { name: 'IndiaBIX - Errors', url: 'https://www.indiabix.com/verbal-ability/spotting-errors/' }
         ]
       },
-      { id: 'cm6', title: 'Fill in Blanks', duration: '1.5h', topics: ['Context', 'Word Choice'], 
+      { id: 'cm6', title: 'Fill in Blanks', duration: '1.5h', topics: ['Context', 'Word Choice'],
         notes: [
           { name: 'GeeksforGeeks - Fill Blanks', url: 'https://www.geeksforgeeks.org/fill-blanks/' }
         ],
@@ -714,7 +573,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Fill Blanks', url: 'https://prepinsta.com/verbal-ability/sentence-completion/' }
         ]
       },
-      { id: 'cm7', title: 'Para Jumbles', duration: '2h', topics: ['Rearrangement', 'Flow'], 
+      { id: 'cm7', title: 'Para Jumbles', duration: '2h', topics: ['Rearrangement', 'Flow'],
         notes: [
           { name: 'GeeksforGeeks - Para Jumbles', url: 'https://www.geeksforgeeks.org/para-jumbles/' }
         ],
@@ -723,7 +582,7 @@ const LearningPlatform = () => {
           { name: 'PrepInsta - Para Jumbles', url: 'https://prepinsta.com/verbal-ability/para-jumbles/' }
         ]
       },
-      { id: 'cm8', title: 'Idioms', duration: '1.5h', topics: ['Phrases', 'Meanings'], 
+      { id: 'cm8', title: 'Idioms', duration: '1.5h', topics: ['Phrases', 'Meanings'],
         notes: [
           { name: 'The Idioms', url: 'https://www.theidioms.com/' }
         ],
@@ -750,7 +609,7 @@ const LearningPlatform = () => {
     if (newLesson.title && newLesson.duration) {
       const topics = newLesson.topics.split(',').map(t => t.trim()).filter(t => t);
       const urls = newLesson.resources.split(',').map(r => r.trim()).filter(r => r);
-      
+
       const lesson = {
         id: `custom_${Date.now()}`,
         title: newLesson.title,
@@ -760,12 +619,12 @@ const LearningPlatform = () => {
         problems: [],
         custom: true
       };
-      
+
       setCustomLessons(prev => ({
         ...prev,
         [selectedCategory]: [...prev[selectedCategory], lesson]
       }));
-      
+
       setNewLesson({ title: '', duration: '', topics: '', resources: '' });
       setShowAddLesson(false);
     }
@@ -779,7 +638,7 @@ const LearningPlatform = () => {
   };
 
   const allLessons = (cat) => [...courses[cat], ...customLessons[cat]];
-  
+
   const getProgress = (cat) => {
     const all = allLessons(cat);
     const done = all.filter(l => completedLessons[l.id]).length;
@@ -789,7 +648,7 @@ const LearningPlatform = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-        
+
         <header className="mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
@@ -880,7 +739,7 @@ const LearningPlatform = () => {
             <div className="grid md:grid-cols-2 gap-4">
               {allLessons(selectedCategory).map((lesson) => {
                 const done = completedLessons[lesson.id];
-                
+
                 return (
                   <div
                     key={lesson.id}
@@ -924,13 +783,16 @@ const LearningPlatform = () => {
                     </div>
 
                     <div className="flex gap-2 mb-3">
-                      {lesson.notes && lesson.notes.length > 0 && (
+                      {lesson.notes && ((Array.isArray(lesson.notes) && lesson.notes.length > 0) || (typeof lesson.notes === 'object' && !Array.isArray(lesson.notes))) && (
                         <button
                           onClick={() => setShowNotesFor(showNotesFor === lesson.id ? null : lesson.id)}
                           className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/50 rounded-lg hover:bg-blue-500/30 transition-all text-sm font-semibold text-blue-300"
                         >
                           <FileText className="w-4 h-4" />
-                          Notes ({lesson.notes.length})
+                          {selectedCategory === 'coding' && typeof lesson.notes === 'object' && !Array.isArray(lesson.notes) ?
+                            'Notes (5 Languages)' :
+                            `Notes (${Array.isArray(lesson.notes) ? lesson.notes.length : 0})`
+                          }
                         </button>
                       )}
                       {lesson.problems && lesson.problems.length > 0 && (
@@ -1023,15 +885,14 @@ const LearningPlatform = () => {
                       </div>
                     )}
 
-                    {/* CodeChef Practice Box - Only show after Functions topic */}
                     {lesson.id === 'c5' && (
                       <div className="mt-3 p-4 bg-gradient-to-br from-orange-900/30 to-slate-800 border-2 border-orange-500/50 rounded-xl">
                         <div className="flex items-center gap-2 mb-3">
                           <Code className="w-5 h-5 text-orange-400" />
-                          <h4 className="font-bold text-orange-400">🎯 CodeChef Practice Arena</h4>
+                          <h4 className="font-bold text-orange-400">CodeChef Practice Arena</h4>
                         </div>
                         <p className="text-sm text-slate-300 mb-3">Start solving beginner-friendly problems (Rating: 200-800)</p>
-                        
+
                         <div className="space-y-2">
                           <a
                             href="https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=200&end_rating=800&topic=&tags=&group=&language=C"
@@ -1074,7 +935,7 @@ const LearningPlatform = () => {
                         </div>
 
                         <div className="mt-3 p-2 bg-orange-500/10 rounded-lg">
-                          <p className="text-xs text-orange-200">💡 <strong>Tip:</strong> Start with easier problems and gradually increase difficulty!</p>
+                          <p className="text-xs text-orange-200"><strong>Tip:</strong> Start with easier problems and gradually increase difficulty!</p>
                         </div>
                       </div>
                     )}
@@ -1124,14 +985,14 @@ const LearningPlatform = () => {
                 const prog = getProgress(cat.id);
                 const total = allLessons(cat.id).length;
                 const done = allLessons(cat.id).filter(l => completedLessons[l.id]).length;
-                
+
                 return (
                   <div key={cat.id} className="bg-slate-800 rounded-xl p-6 border border-slate-700">
                     <Icon className="w-8 h-8 text-cyan-400 mb-3" />
                     <div className="text-2xl font-bold mb-1">{done}/{total}</div>
                     <div className="text-slate-400 text-sm mb-2">{cat.name}</div>
                     <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div 
+                      <div
                         className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full transition-all"
                         style={{ width: `${prog}%` }}
                       />
@@ -1148,7 +1009,7 @@ const LearningPlatform = () => {
                 <div className="text-3xl font-bold mb-1">{Object.keys(completedLessons).length}</div>
                 <div className="text-slate-400">Topics Completed</div>
               </div>
-              
+
               <div className="bg-gradient-to-br from-green-900/30 to-slate-800 rounded-xl p-6 border border-green-500/30">
                 <Target className="w-8 h-8 text-green-400 mb-3" />
                 <div className="text-3xl font-bold mb-1">
@@ -1156,7 +1017,7 @@ const LearningPlatform = () => {
                 </div>
                 <div className="text-slate-400">Custom Topics</div>
               </div>
-              
+
               <div className="bg-gradient-to-br from-purple-900/30 to-slate-800 rounded-xl p-6 border border-purple-500/30">
                 <Trophy className="w-8 h-8 text-purple-400 mb-3" />
                 <div className="text-3xl font-bold mb-1">
