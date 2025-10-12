@@ -32,7 +32,7 @@ const LearningPlatform = () => {
     { id: 'communication', name: 'Communication', icon: MessageSquare }
   ];
 
-  const CODECHEF_PRACTICE_URL = 'https://www.codechef.com/practice';
+  const CODECHEF_PRACTICE_URL = 'https://www.codechef.com/practice/logical-problems';
   const CODECHEF_BEGINNER_URL = 'https://www.codechef.com/practice?page=0&limit=50&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=200&end_rating=1000&topic=&tags=&group=&language=All';
 
   // YouTube DSA Resources (General/Advanced)
