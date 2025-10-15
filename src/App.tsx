@@ -670,28 +670,6 @@ const LearningPlatform = () => {
           </div>
         </header>
 
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-          {[
-            { id: 'courses', label: 'Topics', icon: BookOpen },
-            { id: 'placement', label: 'Progress', icon: Trophy }
-          ].map(tab => {
-            const Icon = tab.icon;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveView(tab.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all whitespace-nowrap ${
-                  activeView === tab.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500'
-                    : 'bg-slate-800 hover:bg-slate-700'
-                }`}
-              >
-                <Icon className="w-5 h-5" />
-                {tab.label}
-              </button>
-            );
-          })}
-        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {categories.map(cat => {
@@ -711,10 +689,6 @@ const LearningPlatform = () => {
                   selectedCategory === cat.id ? 'text-cyan-400' : 'text-slate-400'
                 }`} />
                 <div className="font-semibold mb-1 text-sm">{cat.name}</div>
-                <div className="flex items-center justify-center gap-1 text-xs text-slate-400">
-                  <BarChart className="w-3 h-3" />
-                  {progress}%
-                </div>
               </button>
             );
           })}
@@ -946,90 +920,6 @@ const LearningPlatform = () => {
           </>
         )}
 
-        {activeView === 'placement' && (
-          <div className="space-y-6">
-            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Calendar className="w-6 h-6 text-cyan-400" />
-                Preparation Timeline
-              </h2>
-              <div className="space-y-4">
-                {timeline.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className={`w-4 h-4 rounded-full mt-1 ${
-                      item.status === 'complete' ? 'bg-green-400' :
-                      item.status === 'current' ? 'bg-cyan-400 animate-pulse' :
-                      'bg-slate-600'
-                    }`} />
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1 flex-wrap gap-2">
-                        <span className="font-semibold text-lg">{item.month}</span>
-                        <span className={`text-xs px-2 py-1 rounded ${
-                          item.status === 'complete' ? 'bg-green-500/20 text-green-400' :
-                          item.status === 'current' ? 'bg-cyan-500/20 text-cyan-400' :
-                          'bg-slate-700 text-slate-400'
-                        }`}>
-                          {item.status}
-                        </span>
-                      </div>
-                      <p className="text-slate-400">{item.tasks}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-4 gap-4">
-              {categories.map(cat => {
-                const Icon = cat.icon;
-                const prog = getProgress(cat.id);
-                const total = allLessons(cat.id).length;
-                const done = allLessons(cat.id).filter(l => completedLessons[l.id]).length;
-
-                return (
-                  <div key={cat.id} className="bg-slate-800 rounded-xl p-6 border border-slate-700">
-                    <Icon className="w-8 h-8 text-cyan-400 mb-3" />
-                    <div className="text-2xl font-bold mb-1">{done}/{total}</div>
-                    <div className="text-slate-400 text-sm mb-2">{cat.name}</div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full transition-all"
-                        style={{ width: `${prog}%` }}
-                      />
-                    </div>
-                    <div className="text-xs text-slate-400 mt-1 text-right">{prog}%</div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-900/30 to-slate-800 rounded-xl p-6 border border-blue-500/30">
-                <Code className="w-8 h-8 text-blue-400 mb-3" />
-                <div className="text-3xl font-bold mb-1">{Object.keys(completedLessons).length}</div>
-                <div className="text-slate-400">Topics Completed</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-green-900/30 to-slate-800 rounded-xl p-6 border border-green-500/30">
-                <Target className="w-8 h-8 text-green-400 mb-3" />
-                <div className="text-3xl font-bold mb-1">
-                  {Object.values(customLessons).reduce((sum, cat) => sum + cat.length, 0)}
-                </div>
-                <div className="text-slate-400">Custom Topics</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-purple-900/30 to-slate-800 rounded-xl p-6 border border-purple-500/30">
-                <Trophy className="w-8 h-8 text-purple-400 mb-3" />
-                <div className="text-3xl font-bold mb-1">
-                  {Math.round(
-                    (getProgress('coding') + getProgress('quant') + getProgress('reasoning') + getProgress('communication')) / 4
-                  )}%
-                </div>
-                <div className="text-slate-400">Overall Progress</div>
-              </div>
-            </div>
-          </div>
-        )}
 
         {showAddLesson && (
           <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50" onClick={() => setShowAddLesson(false)}>
