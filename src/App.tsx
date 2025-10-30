@@ -667,11 +667,11 @@ const LearningPlatform = () => {
               </div>
               <div className="text-xl font-bold text-cyan-400">Build Strong Foundation</div>
             </div>
-          </div>
-          <div style={{ textAlign: 'center', margin: '16px 0', fontWeight: 'bold' }}>
+            <div style={{ textAlign: 'center', margin: '16px 0', fontWeight: 'bold' }}>
   This website is built by G Hruday Bharadwaj
 </div>
 
+          </div>
         </header>
 
 
